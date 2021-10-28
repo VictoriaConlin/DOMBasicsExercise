@@ -30,7 +30,7 @@ h1.innerText = `Matt's Favorite Places To Eat In Sweet Home Chicago!`;
 const others = document.getElementById(`others`);
 console.dir(others)
 // 7b
-others.innerHTML = `Other favorites`
+others.innerHTML = `<h3>Other favorites</h3>`
 
 // 8a
 const aTag = document.querySelector(`a`);
@@ -42,7 +42,6 @@ console.log(aTag.href);
 
 // 9
 h1.classList.add(`background`, `text-color`);
-console.log(h1.classList);
 
 // 10
 h1.classList.remove(`background`);
@@ -52,8 +51,8 @@ const h4 = document.createElement(`h4`);
 // 11b
 h4.innerText = `CHICAGO: A great place to eat!`;
 // 11c
-const div = document.querySelector(`body`);
-div.prepend(h4);
+const body = document.querySelector(`body`);
+body.prepend(h4);
 
 // 12a
 const h5 = document.createElement(`h5`);
@@ -63,12 +62,26 @@ h5.innerText = `See you in the Windy City Sometime!`;
 aTag.insertAdjacentElement(`afterend`, h5);
 
 // 13
-const firstLi = document.querySelector(`li`);
-firstLi.remove();
+document.querySelector(`ul > li`).remove();
+
 
 // BONUS
 // 14a 
-const div = document.querySelectorAll(`div`)
+const div = document.getElementsByTagName(`div`);
 // 14b
-div.classList.toggle(`background`);
+for (d of div){
+    d.classList.toggle(`background`);
+}
+
+// 15a
+const hungry = [
+    "Thanks", "A", "Lot", "Now", "I", "Am", "Hungry"
+]
+// 15b
+const end = document.querySelector(`body`);
+for (a of hungry){
+    const span = document.createElement(`span`);
+    span.innerText = a;
+    end.append(span);
+}
 
